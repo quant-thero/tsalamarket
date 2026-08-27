@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin -- Tsala Market</title>
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+
+<div id="app-nav"></div>
+
+<main class="page">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">System admin &middot; UC-04, FR-16, FR-17</span>
+      <h1>Verification queue &amp; configuration</h1>
+      <p style="max-width:640px;">Resolve unverified and outlier-flagged entries, review the immutable audit trail, and tune the thresholds that drive the pricing engine -- all without a code change.</p>
+    </div>
+
+    <div class="grid grid-4" style="margin-bottom:24px;" id="admin-stats"></div>
+
+    <div class="card" style="margin-bottom:24px;">
+      <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:14px;">
+        <h3 style="margin:0;">Verification queue</h3>
+        <div class="tag-row">
+          <button class="btn btn-outline btn-sm" id="filter-all">All</button>
+          <button class="btn btn-outline btn-sm" id="filter-unverified">Unverified</button>
+          <button class="btn btn-outline btn-sm" id="filter-outliers">Flagged outliers</button>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Submitted</th><th>Commodity</th><th>District</th><th>Grade</th><th>Price</th><th>Status</th><th>Flags</th><th>Actions</th></tr></thead>
+          <tbody id="queue-body"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="grid grid-2" style="align-items:start;">
+      <div class="card">
+        <h3>System parameters</h3>
+        <p class="small muted">Changes apply immediately to the pricing engine used by Check my offer.</p>
+        <form id="params-form">
+          <div class="field-row">
+            <div class="field">
+              <label>Aggregation window (days)</label>
+              <input type="number" id="p-window" min="1" step="1">
+            </div>
+            <div class="field">
+              <label>Corroboration window (hours)</label>
+              <input type="number" id="p-corrhours" min="1" step="1">
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label>Corroboration tolerance (%)</label>
+              <input type="number" id="p-corrtol" min="0" step="1">
+            </div>
+            <div class="field">
+              <label>Outlier IQR multiplier</label>
+              <input type="number" id="p-iqr" min="0.5" step="0.1">
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label>Min. sample size</label>
+              <input type="number" id="p-minsample" min="1" step="1">
+            </div>
+            <div class="field">
+              <label>Min. distinct submitters</label>
+              <input type="number" id="p-minsub" min="1" step="1">
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label>"Fair" threshold (% below median)</label>
+              <input type="number" id="p-fair" min="0" step="1">
+            </div>
+            <div class="field">
+              <label>"Below average" threshold (%)</label>
+              <input type="number" id="p-below" min="0" step="1">
+            </div>
+          </div>
+          <button class="btn btn-primary" type="submit">Save parameters</button>
+          <button class="btn btn-outline" type="button" id="reset-demo">Reset demo data</button>
+        </form>
+      </div>
+
+      <div class="card">
+        <h3>Audit log</h3>
+        <p class="small muted">Immutable, append-only record of every admin action (BR-12).</p>
+        <div class="table-wrap" style="max-height:420px; overflow-y:auto;">
+          <table>
+            <thead><tr><th>When</th><th>Action</th><th>Entry</th><th>Change</th></tr></thead>
+            <tbody id="audit-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">Tsala Market &middot; CSI473 Team 16 frontend prototype &middot; synthetic data only.</div>
+</footer>
+
+<script src="../assets/js/mock-data.js"></script>
+<script src="../assets/js/store.js"></script>
+<script src="../assets/js/pricing-engine.js"></script>
+<script src="../assets/js/nav.js"></script>
+<script src="../assets/js/admin.js"></script>
+<script>renderNav("../", "admin");</script>
+</body>
+</html>

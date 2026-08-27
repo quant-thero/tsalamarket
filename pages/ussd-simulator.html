@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>USSD demo -- Tsala Market</title>
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+
+<div id="app-nav"></div>
+
+<main class="page">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Feature-phone channel &middot; NFR -- offline/low-connectivity access</span>
+      <h1>USSD experience simulator</h1>
+      <p style="max-width:620px;">
+        Not every farmer has a smartphone or reliable data. The same Fair Price Check runs over a *134*# style USSD
+        menu on any basic phone. This is a simulated session -- press the on-screen keys as you would on a handset.
+      </p>
+    </div>
+
+    <div class="grid grid-2" style="align-items:start; gap:40px;">
+      <div class="phone">
+        <div class="phone-screen" id="ussd-screen">Dial *134*7# to begin...</div>
+        <div class="phone-keys">
+          <span class="phone-key">Back</span>
+          <span class="phone-key">Select</span>
+          <span class="phone-key">End</span>
+        </div>
+      </div>
+
+      <div>
+        <div class="card">
+          <h3>Enter your reply</h3>
+          <p class="small muted">Type the number shown in the menu, or the value requested, then press Send.</p>
+          <div class="input-group">
+            <input type="text" id="ussd-input" placeholder="e.g. 1">
+            <button class="btn btn-primary" id="ussd-send">Send</button>
+          </div>
+          <button class="btn btn-outline btn-block" id="ussd-restart" style="margin-top:12px;">Restart session (dial *134*7#)</button>
+        </div>
+        <div class="card" style="margin-top:20px;">
+          <h3>Why this matters</h3>
+          <p class="small">
+            BAMB's pricing info reaches 11 branch offices; horticulture farmers often have no pricing reference at all.
+            A USSD flow means the Fair Price Check works on a P150 handset with no internet bundle -- the same
+            verified data, same fairness classification, same disclaimer.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">Tsala Market &middot; CSI473 Team 16 frontend prototype &middot; synthetic data only.</div>
+</footer>
+
+<script src="../assets/js/mock-data.js"></script>
+<script src="../assets/js/store.js"></script>
+<script src="../assets/js/pricing-engine.js"></script>
+<script src="../assets/js/nav.js"></script>
+<script src="../assets/js/ussd-simulator.js"></script>
+<script>renderNav("../", "ussd");</script>
+</body>
+</html>

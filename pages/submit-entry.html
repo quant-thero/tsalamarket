@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Submit a price entry -- Tsala Market</title>
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+
+<div id="app-nav"></div>
+
+<main class="page">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Market vendor / cooperative lead / verified buyer &middot; UC-03</span>
+      <h1>Submit a price entry</h1>
+      <p style="max-width:620px;">Your submission starts as community-reported. It's promoted to verified automatically once a second independent entry corroborates it within 72 hours (within 15%), or when a System Admin confirms it.</p>
+    </div>
+
+    <div class="grid grid-2" style="align-items:start;">
+      <form class="card" id="submit-form">
+        <div class="field">
+          <label for="submitter-name">Your name / cooperative</label>
+          <input type="text" id="submitter-name" placeholder="e.g. Molepolole Coop Lead" required>
+        </div>
+        <div class="field">
+          <label for="role">Submitting as</label>
+          <select id="role">
+            <option>Market Vendor</option>
+            <option>Cooperative Lead</option>
+            <option>Verified Buyer</option>
+          </select>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="commodity">Commodity</label>
+            <select id="commodity"></select>
+          </div>
+          <div class="field">
+            <label for="district">District</label>
+            <select id="district"></select>
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="grade">Quality grade</label>
+            <select id="grade">
+              <option value="">Ungraded (defaults to Grade B)</option>
+              <option value="A">Grade A</option>
+              <option value="B">Grade B</option>
+              <option value="C">Grade C</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="market-level">Market level</label>
+            <select id="market-level">
+              <option value="FarmGate">Farm-gate</option>
+              <option value="Wholesale">Wholesale / municipal</option>
+              <option value="Retail">Retail</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="amount">Price observed</label>
+          <div class="input-group">
+            <input type="number" id="amount" min="0" step="0.01" placeholder="e.g. 160" required>
+            <select id="unit" required></select>
+          </div>
+        </div>
+        <button class="btn btn-secondary btn-block" type="submit">Submit price entry</button>
+      </form>
+
+      <div>
+        <div id="submit-result" class="card empty-state" style="margin-bottom:20px;">
+          <p>Submitted entries and their verification outcome will appear here.</p>
+        </div>
+        <div class="card">
+          <h3>Your recent submissions</h3>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Commodity</th><th>District</th><th>Price</th><th>Status</th></tr></thead>
+              <tbody id="my-entries-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">Tsala Market &middot; CSI473 Team 16 frontend prototype &middot; synthetic data only.</div>
+</footer>
+
+<script src="../assets/js/mock-data.js"></script>
+<script src="../assets/js/store.js"></script>
+<script src="../assets/js/pricing-engine.js"></script>
+<script src="../assets/js/nav.js"></script>
+<script src="../assets/js/submit-entry.js"></script>
+<script>renderNav("../", "submit");</script>
+</body>
+</html>

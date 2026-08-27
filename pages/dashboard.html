@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Price trends -- Tsala Market</title>
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+
+<div id="app-nav"></div>
+
+<main class="page">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Smallholder farmer &middot; UC-02</span>
+      <h1>Price lookup &amp; trends</h1>
+      <p style="max-width:620px;">See current and recent prices for a commodity/district before you even receive an offer. Verified and community-reported entries are both shown for context; only verified entries feed the Fair Price Check.</p>
+    </div>
+
+    <div class="card" style="margin-bottom:24px;">
+      <div class="field-row">
+        <div class="field" style="margin-bottom:0;">
+          <label for="commodity">Commodity</label>
+          <select id="commodity"></select>
+        </div>
+        <div class="field" style="margin-bottom:0;">
+          <label for="district">District</label>
+          <select id="district"></select>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid-4" style="margin-bottom:24px;" id="stat-row"></div>
+
+    <div class="card" style="margin-bottom:24px;">
+      <h3>P/kg over the last 30 days -- Farm-gate, Grade B</h3>
+      <canvas id="trend-chart" height="90"></canvas>
+    </div>
+
+    <div class="card">
+      <h3>Recent submissions</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Date</th><th>Grade</th><th>Market level</th><th>Price</th><th>Status</th><th>Submitter</th></tr></thead>
+          <tbody id="entries-body"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">Tsala Market &middot; CSI473 Team 16 frontend prototype &middot; synthetic data only.</div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
+<script src="../assets/js/mock-data.js"></script>
+<script src="../assets/js/store.js"></script>
+<script src="../assets/js/pricing-engine.js"></script>
+<script src="../assets/js/nav.js"></script>
+<script src="../assets/js/dashboard.js"></script>
+<script>renderNav("../", "dashboard");</script>
+</body>
+</html>

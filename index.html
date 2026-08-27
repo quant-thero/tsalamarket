@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tsala Market -- Fair prices for Botswana's smallholder farmers</title>
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+<div id="app-nav"></div>
+
+<header class="page" style="padding-top:56px; padding-bottom: 56px; background: linear-gradient(180deg, var(--brand-50), var(--paper-0));">
+  <div class="container">
+    <div class="grid grid-2" style="align-items:center; gap: 48px;">
+      <div>
+        <span class="badge badge-community" style="margin-bottom:16px;">Grain &middot; Horticulture &middot; Livestock</span>
+        <h1 style="font-size:2.6rem; margin-top:12px;">Know what your harvest is really worth -- before you sell.</h1>
+        <p style="font-size:1.05rem; max-width:520px;">
+          Tsala Market ("friend" in Setswana) closes the information gap between smallholder farmers and buyers.
+          Check any offer against verified market prices in seconds, over the web or a basic feature phone.
+        </p>
+        <div class="tag-row" style="margin-top:24px;">
+          <a class="btn btn-primary" href="pages/check-price.html">Check my offer</a>
+          <a class="btn btn-outline" href="pages/dashboard.html">Browse price trends</a>
+        </div>
+        <p class="small muted" style="margin-top:18px;">
+          No smartphone? The same flow works over USSD --
+          <a href="pages/ussd-simulator.html" style="color:var(--brand-700); font-weight:600;">try the feature-phone demo</a>.
+        </p>
+      </div>
+      <div class="card" style="background: var(--brand-900); border: none;">
+        <div style="color:#fff;">
+          <span class="small" style="opacity:.7; font-weight:700; text-transform:uppercase; letter-spacing:.06em;">Example -- fair price check</span>
+          <div style="display:flex; align-items:baseline; gap:10px; margin-top:14px;">
+            <span style="font-size:2.4rem; font-weight:800;">P8.00</span>
+            <span style="opacity:.7;">/ kg verified reference &middot; Tomatoes, Kweneng, Grade B</span>
+          </div>
+          <div class="divider" style="background:rgba(255,255,255,.12);"></div>
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <span style="opacity:.8;">Buyer offered P5.60 / kg</span>
+            <span class="badge badge-underpaid">Significantly underpaid</span>
+          </div>
+          <p class="small" style="opacity:.6; margin-top:14px; margin-bottom:0;">
+            30% below the verified median &middot; High confidence &middot; 5 verified entries, 4 submitters
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="page" style="padding-top:0;">
+  <div class="container">
+
+    <section class="section-head">
+      <span class="eyebrow">The problem</span>
+      <h2>Farmers negotiate blind. Buyers always know the going rate.</h2>
+      <p style="max-width:760px;">
+        BAMB's official pricing reaches only 11 branches and requires bulk volumes most smallholders can't meet.
+        Horticulture has no pricing board at all -- prices are set entirely by middlemen. Tsala Market gives every
+        farmer a reference point, sourced from verified market vendors, registered buyers, and BAMB data.
+      </p>
+    </section>
+
+    <div class="grid grid-4" style="margin-bottom:56px;">
+      <div class="stat"><div class="stat-value">9</div><div class="stat-label">Commodities tracked</div></div>
+      <div class="stat"><div class="stat-value">10</div><div class="stat-label">Districts covered</div></div>
+      <div class="stat"><div class="stat-value">30-day</div><div class="stat-label">Rolling verified window</div></div>
+      <div class="stat"><div class="stat-value">Web + USSD</div><div class="stat-label">Access channels</div></div>
+    </div>
+
+    <section class="section-head">
+      <span class="eyebrow">Built for every role in the market</span>
+      <h2>One platform, four ways in</h2>
+    </section>
+
+    <div class="grid grid-4">
+      <a class="card card-flat" href="pages/check-price.html">
+        <span class="role-pill" style="background:var(--brand-600);">Farmer</span>
+        <h3 style="margin-top:12px;">Check my offer</h3>
+        <p class="small">Submit the price a buyer just offered and get an instant fairness flag against the verified market average.</p>
+      </a>
+      <a class="card card-flat" href="pages/submit-entry.html">
+        <span class="role-pill" style="background:var(--blue-600);">Vendor / buyer</span>
+        <h3 style="margin-top:12px;">Submit a price entry</h3>
+        <p class="small">Market vendors, cooperative leads and verified buyers contribute the data that keeps the reference prices trustworthy.</p>
+      </a>
+      <a class="card card-flat" href="pages/extension-officer.html">
+        <span class="role-pill" style="background:var(--amber-600);">Extension officer</span>
+        <h3 style="margin-top:12px;">Aggregate dashboard</h3>
+        <p class="small">Anonymised, district-level view of underpayment patterns and query volume -- no farmer-identifiable data, ever.</p>
+      </a>
+      <a class="card card-flat" href="pages/admin.html">
+        <span class="role-pill" style="background:var(--danger-600);">System admin</span>
+        <h3 style="margin-top:12px;">Verify &amp; configure</h3>
+        <p class="small">Resolve unverified entries, review flagged outliers, and tune thresholds without a code change.</p>
+      </a>
+    </div>
+
+    <div class="divider"></div>
+
+    <section class="section-head">
+      <span class="eyebrow">How the fairness check works</span>
+      <h2>Verified data in, a clear flag out</h2>
+    </section>
+    <div class="grid grid-3">
+      <div class="card card-flat">
+        <h3>1. Verified vs. community</h3>
+        <p class="small">Every submission starts as community-reported. It's promoted to verified only when a registered buyer submits it, a second independent entry corroborates it within 72 hours, or an admin confirms it.</p>
+      </div>
+      <div class="card card-flat">
+        <h3>2. Median, not mean</h3>
+        <p class="small">The reference price is the median of verified entries from the trailing 30 days, after excluding statistical outliers -- deliberately resistant to a single bad-faith submission.</p>
+      </div>
+      <div class="card card-flat">
+        <h3>3. Fair, low, or falling short</h3>
+        <p class="small">Offers within 10% of the reference are Fair; 10-25% below is Below average; more than 25% below is Significantly underpaid -- always shown with a confidence label.</p>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    Tsala Market &middot; CSI473 Team 16 frontend prototype &middot; All data shown is synthetic/mocked for demonstration.
+  </div>
+</footer>
+
+<script src="assets/js/mock-data.js"></script>
+<script src="assets/js/store.js"></script>
+<script src="assets/js/nav.js"></script>
+<script>renderNav("", "home");</script>
+</body>
+</html>

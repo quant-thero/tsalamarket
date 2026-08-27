@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Check my offer -- Tsala Market</title>
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+
+<div id="app-nav"></div>
+
+<main class="page">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Smallholder farmer &middot; UC-01</span>
+      <h1>Is this offer fair?</h1>
+      <p style="max-width:600px;">Tell us what you were offered, and we'll compare it against the verified market average for your commodity and district.</p>
+    </div>
+
+    <div class="grid grid-2" style="align-items:start;">
+      <form class="card" id="check-form">
+        <div class="field">
+          <label for="commodity">Commodity</label>
+          <select id="commodity" required></select>
+        </div>
+        <div class="field">
+          <label for="district">District</label>
+          <select id="district" required></select>
+        </div>
+        <div class="field">
+          <label for="grade">Quality grade</label>
+          <select id="grade">
+            <option value="">Not sure / skip (defaults to Grade B)</option>
+            <option value="A">Grade A -- premium</option>
+            <option value="B">Grade B -- standard</option>
+            <option value="C">Grade C -- below standard</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="amount">Price the buyer offered you</label>
+          <div class="input-group">
+            <input type="number" id="amount" min="0" step="0.01" placeholder="e.g. 150" required>
+            <span style="display:flex;align-items:center;color:var(--ink-500);font-weight:600;">for</span>
+            <select id="unit" required></select>
+          </div>
+          <div class="hint">Pula (P), for the unit you were quoted -- we'll convert it to P/kg automatically.</div>
+        </div>
+        <button class="btn btn-primary btn-block" type="submit">Check my offer</button>
+      </form>
+
+      <div id="result-panel" class="card empty-state">
+        <p>Fill in the form and submit -- your fairness result will appear here.</p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+    <p class="small muted">
+      Every result carries a confidence label and a disclaimer: this is indicative guidance from recent verified
+      submissions, not a guaranteed or audited price. Your query is logged anonymously (commodity, district, deviation)
+      for the Extension Officer dashboard -- no personal or precise location data is ever stored.
+    </p>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">Tsala Market &middot; CSI473 Team 16 frontend prototype &middot; synthetic data only.</div>
+</footer>
+
+<script src="../assets/js/mock-data.js"></script>
+<script src="../assets/js/store.js"></script>
+<script src="../assets/js/pricing-engine.js"></script>
+<script src="../assets/js/nav.js"></script>
+<script src="../assets/js/check-price.js"></script>
+<script>renderNav("../", "check");</script>
+</body>
+</html>
